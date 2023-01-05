@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Saira+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Saira+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+  --primary: #efb6b2;
+  --secondary: #4e4e4e;
+  --error: #ff4a4a;
+}
+
+/* base styles & title */
+body {
+  font-family: "Noto Serif";
+  color: var(--secondary);
+  background-color: #DADDD8;
+}
+
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.contents {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.title .contents .profile-pic img {
+  margin-left: 45px;
+  margin-top: 45px;
+  width: 165px;
+  height: 165px;
+  border-radius: '50%';
+}
+
+.title .contents .about {
+  margin-left: 50px;
+  margin-top: 12px;
+}
+
+.title .contents .about .intro p{
+  font-size: 5px;
+}
+
+.title .contents .about p {
+  font-family: 'Roboto Mono';
+  text-align: left;
+}
+
+.title .contents .about .social a{
+  font-size: 22px;
+  margin-right: 3%;
+  cursor: pointer;
+} 
+
+.title .contents .about .social a{
+  text-decoration: none;
+} 
+
+.title .contents .about .social i:hover{
+  color: #ff4a4a;
+}
+
+h3 {
+  font-family: 'Inconsolata';
+  font-size: 30px;
+}
+
+.title h1 {
+  color: var(--error);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  font-weight: normal;
+  font-family: 'Raleway';
+}
+
+.title h2 {
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+
+/* upload form styles */
+form {
+  margin: 30px auto 10px;
+  text-align: center;
+}
+
+form label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+form label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--error);
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--error);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+form label span {
+  text-align: center;
+}
+
+form label:hover {
+  background: var(--error);
+  color: black;
+}
+
+.output {
+  height: 60px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.error {
+  color: var(--error);
+}
+
+/* progress bar styles */
+.progress-bar {
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+
+/* image grid styles */
+.img-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  /* padding controls height, will always be perfectly square regardless of width */
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-wrap img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* modal styles */
+
+.modal-flex .backdrop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop img {
+  /* margin: 181px auto; */
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+}
+
+
+
+
+button {
+  background-color: #DADDD8;
+  border: 1px solid var(--primary);
+  padding: 8px;
+  border-radius: 10px;
+  font-family: 'Varela Round';
+}
+
+button:hover {
+  background-color: var(--primary);
+}
+
+
+@media (max-width: 598px) {
+  .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title .contents .profile-pic img {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  .title .contents .about {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  .title .contents .about p,
+  h3 {
+    text-align: center;
+  }
+
+  .title .contents .about .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title .contents .about .social a{
+    font-size: 30px;
+    margin: 0% 3%;
+    cursor: pointer;
+  } 
+
+  .img-grid {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+}
+
